@@ -3,8 +3,10 @@ import { Link, useParams } from 'react-router-dom';
 import  axios from 'axios'
 import { setPolicies } from '../../../redux/policySlice';
 import {useDispatch} from 'react-redux';
+import { Player } from '@lottiefiles/react-lottie-player';
 
-const PolicyCard = ({unique,data , insuranceType}) =>{
+
+const PolicyCard = ({unique , data , insuranceType}) =>{
     return(
         <>
             <Link to={`/policy/${insuranceType}/${unique}`}>
@@ -64,7 +66,6 @@ const Policy = () => {
 
         } catch (error) {
             console.error('Error fetching available insurance:', error);
-            // Handle the error
         }
     }
 
@@ -78,11 +79,21 @@ const Policy = () => {
                     </div>
                     <div className='w-[60%] mx-auto flex flex-col gap-[16px]'>
                         {
+                            insuranceData.length > 0 ?
                             insuranceData && insuranceData.map((data, index) => {
                                 return (
                                     <PolicyCard key={index} unique={index} data={data} insuranceType={insuranceType}/>
                                 )
                             })
+                            :
+                                <Player
+                                    src='https://lottie.host/821a4544-9c77-4340-abc6-74b660712a58/YPVDFddI0e.json'
+                                    className="player"
+                                    loop
+                                    autoplay
+                                    style={{ height: '300px', width: '300px' }}
+                                    speed={0.8}
+                                />
                         }
                     </div>
                 </div>

@@ -53,8 +53,7 @@ const UserPurchased = () => {
                                 </div>
                            
                         )
-                    }) : <h1 className='text-3xl text-center'>Nothing in the purchase 🐺</h1>
-                
+                    }) : <h1 className='text-3xl text-center'>None in the purchase</h1>
                 }
                
             </div>
