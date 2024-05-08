@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 const Footer = () => {
     return (
         <section className='border-y-[1px] border-gray-300 font-medium'>
-            <div className='w-[80%] mx-auto flex flex-col gap-[10px]'>
+            <div className='lg:w-[80%] w-[90%] mx-auto flex flex-col gap-[10px]'>
                 <div className="flex flex-row gap-[20px] py-[15px] justify-center items-center">
                     <img width="48" height="48" src="https://img.icons8.com/fluency/48/security-checked--v1.png" alt="security-checked--v1" />
                     <text className='font-semibold text-[24px] text-green-600'>SKC Insurance</text>

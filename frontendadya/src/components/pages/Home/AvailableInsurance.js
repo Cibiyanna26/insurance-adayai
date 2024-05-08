@@ -82,7 +82,7 @@ const AvailableInsurance = () =>{
         <>  
             <Fragment>
                 <div className="w-full my-[80px]" id="insuranceproducts z-10" >
-                    <div className="w-[70%] mx-auto flex flex-col gap-[25px]">
+                    <div className="lg:w-[80%] w-[90%] mx-auto flex flex-col gap-[25px]">
                         <div className="flex flex-col gap-[12px] text-center">
                             <h1 className="text-3xl font-semibold">Every Insurance you need in the <span className="text-green-500">21st</span> Century</h1>
                             <p className="text-xl font-normal text-gray-700">
@@ -91,7 +91,7 @@ const AvailableInsurance = () =>{
                             </p>
                         </div>
                         <div>
-                            <div className="grid grid-cols-3 gap-[25px]">
+                            <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-[20px]">
                                 {
                                     insuranceData.map((data,index) =>(
                                         <Card key={index} data={data}/>
