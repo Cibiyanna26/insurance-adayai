@@ -7,7 +7,6 @@ import { useNavigate } from 'react-router-dom';
 import Footer from './components/layouts/Footer';
 import { useDispatch } from 'react-redux';
 import { setUser } from './redux/userSlice';
-import { Player } from '@lottiefiles/react-lottie-player';
 
 function App() {
   const navigate = useNavigate()
@@ -39,18 +38,10 @@ function App() {
           <Footer />
         </div >
         :
-        <div>
-            <Player
-              src='https://lottie.host/857adf4b-5991-4fc9-b213-bbd030afffdc/ElcMq3cSWF.json'
-              className="player"
-              loop
-              autoplay
-              style={{ height: '100vh', width: '100vh' }}
-              speed={0.8}
-            />
-          </div>
+        <div className='flex h-screen items-center justify-center'>
+              <div className='text-xl'>Loading . . .</div>
+        </div>
       }
-
     </>
 
   );
