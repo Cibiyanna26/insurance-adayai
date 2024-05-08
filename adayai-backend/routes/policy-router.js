@@ -11,5 +11,5 @@ const { fetchPolicyData,
            createCustomerPolicy } = require('../controllers/policy-controller')
 
 router.route('/').get(fetchPolicyData).post(policyInfo,createPolicy)
-router.route('/user').get( getCustomerPolicy).post(AppliedpolicyInfo,createCustomerPolicy)
+router.route('/user').get(auth, getCustomerPolicy).post(AppliedpolicyInfo,createCustomerPolicy)
 module.exports =  router;

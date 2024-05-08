@@ -42,7 +42,8 @@ async function getCustomerPolicy(req, res) {
 
     try {
         const email = req.user.email;
-        const customerPolicy = await Policy.find({ email });
+        console.log(email)
+        const customerPolicy = await PoliciesApplied.find({email});
 
         if (customerPolicy.length === 0) {
             return res.status(404).json({ message: 'No Policy Found for this customer', status: 404 });

@@ -9,7 +9,22 @@ const port = 5000;
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }))
-app.use(cors());
+
+
+const corsOptions = {
+    origin: ['https://insurance-frontend-adayai.vercel.app', 'http://localhost:3000'],
+    credentials: true,            //access-control-allow-credentials:true
+    optionSuccessStatus: 200,
+}
+
+
+app.use(cors(corsOptions));
+
+app.use((req, res, next) => {
+    res.header('Access-Control-Allow-Origin', '*');
+    next();
+});
+
 
 connectDB();
 app.use('/api/',require('./routes/user-signup-login'))
