@@ -27,19 +27,27 @@ const signup = async (req,res) =>{
 
 const login = async (req,res) =>{
     const { email, password } = req.body;
-    const user = await User.findOne({ email });
-    console.log(user)
-    if (user && (await bcrypt.compare(password, user.password))) {
+    
+  
+    try{
+        const user = await User.findOne({ email });
+        if (!await bcrypt.compare(password, user.password)) {
+            return res.status(400).json({ msg: "Invalid password" });
+         
+        }
+        // console.log(user.length)
+        if (!user) {
+            return res.status(400).json({ msg: "Invalid user data" });
+        }
         return res.status(200).json({
             _id: user._id,
             name: user.username,
             email: user.email,
             token: genJWT(user.email, user.username),
             status: "Successfully logged in"
-        })
-    }   
-    else {
-        return res.status(400).json({ msg: "Invalid user data" });
+        });  
+    }catch(err){
+         return res.status(500).json({message:err.message,status:500})
     }
     
 }

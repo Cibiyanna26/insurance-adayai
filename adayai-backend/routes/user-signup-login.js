@@ -10,7 +10,12 @@ router.post('/signup',validInfo,signup);
 router.post('/login', login);
 
 router.get('/check',auth,(req,res)=>{
-    res.send('hello')
+    res.status(200).json({
+        success:true,
+        message:"User is authorized",
+        user:req.user,
+        status:200
+    })
 })
 
 module.exports = router;
