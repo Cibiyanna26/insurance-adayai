@@ -8,7 +8,7 @@ const Header = () =>{
             <header className="border-b-2 border-gray-300 shadow-lg">
                 <nav className="flex flex-row justify-between text-lg p-[16px]">
                     <div className="flex flex-row gap-[32px]">
-                        <Link to="/" className="text-2xl font-semibold">Policy Ins</Link>
+                        <Link to="/" className="text-2xl font-semibold">SKC Insurance</Link>
                        
                     </div>
                     <div className="flex flex-row gap-[24px]">
