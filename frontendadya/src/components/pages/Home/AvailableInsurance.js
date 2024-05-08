@@ -12,9 +12,9 @@ const Card = ({data}) =>{
     return(
         <>
             <Link to={'/policy/'+data.route} className="mx-auto">
-                <div className="w-[300px] flex flex-col gap-[16px] p-[8px] pb-[40px] rounded-[20px] border-2 border-gray-400 hover:scale-105 duration-200 ease-in">
+                <div className="w-[300px] flex flex-col gap-[16px] p-[8px] pb-[40px] rounded-[16px] border-2 border-gray-400 hover:scale-105 duration-200 ease-in">
                 
-                    <div className=" rounded-[4px] p-[4px] flex flex-col gap-[16px] items-center">
+                    <div className=" rounded-[8px] p-[4px] flex flex-col gap-[16px] items-center justify-center">
                         <div className="">
                             {data.icon} 
                         </div>
@@ -22,7 +22,7 @@ const Card = ({data}) =>{
                         <div className="rounded-[4px] text-center">
                             <p className="text-xl font-semibold">{data.insurance}</p>
                         </div>
-                        <div className="h-[50px] w-full rounded-[4px] p-[4px] flex items-center bg-green-500 justify-center text-white">
+                        <div className="h-[50px] w-full rounded-[8px] p-[4px] flex items-center bg-green-500 justify-center text-white">
                             Explore
                         </div>
                     </div>

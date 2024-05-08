@@ -35,7 +35,7 @@ const SignUp = () =>{
     }
     return(
         <>  
-            <div className="flex flex-col items-center justify-center h-screen bg-red-100">
+            <div className="flex flex-col items-center justify-center h-screen bg-green-500">
                 <Toaster />
                 <div className="w-full max-w-md bg-white rounded-lg shadow-md p-6">
                     <h2 className="text-2xl font-bold text-gray-900 mb-4">Sign up</h2>
