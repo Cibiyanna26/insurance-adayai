@@ -31,14 +31,14 @@ const login = async (req,res) =>{
   
     try{
         const user = await User.findOne({ email });
+        if (!user) {
+            return res.status(400).json({ message: "Invalid User Details" });
+        }
         if (!await bcrypt.compare(password, user.password)) {
             return res.status(400).json({ msg: "Invalid password" });
          
         }
-        // console.log(user.length)
-        if (!user) {
-            return res.status(400).json({ msg: "Invalid user data" });
-        }
+       
         return res.status(200).json({
             _id: user._id,
             name: user.username,

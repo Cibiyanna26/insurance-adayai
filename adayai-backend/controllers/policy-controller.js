@@ -64,9 +64,11 @@ async function createCustomerPolicy(req,res){
         const {email, policyId , coverAmount , policyName}= req.body;
 
         const availablePolicy = await PoliciesApplied.find({ email,policyId });
+
         if (availablePolicy.length) {
             return res.status(409).json({ message: 'Customer already claimed the policy', status: 409 });
         }
+        
         const policyApplied = new PoliciesApplied({
             email,
             policyId,
