@@ -14,7 +14,7 @@ const SignIn = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try{
-            const response = await axios.post('https://insurance-backend-adayai.vercel.app/api/login',{
+            const response = await axios.post(`${process.env.REACT_APP_API_URL}/login`,{
                 email,password
             })
             console.log(response.data)

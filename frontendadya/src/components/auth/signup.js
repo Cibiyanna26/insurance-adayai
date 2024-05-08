@@ -15,7 +15,7 @@ const SignUp = () =>{
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post('http://localhost:5000/api/signup', {
+            const response = await axios.post(`${process.env.REACT_APP_API_URL}/signup`, {
                 email, password ,username , confirmPassword
             })
             setCookie('token',response.data.token,156)

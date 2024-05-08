@@ -4,7 +4,7 @@ import axios from 'axios'
 async function checkAuthorization() {
     const token = getCookie('token');
     try {
-        const response = await axios.get('http://localhost:5000/api/check', {
+        const response = await axios.get(`${process.env.REACT_APP_API_URL}/check`, {
             headers: {
                 'Content-Type': 'application/json',
                 'Authorization': `Bearer ${token}`

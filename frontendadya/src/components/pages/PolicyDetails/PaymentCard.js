@@ -14,7 +14,7 @@ const PaymentCard = ({totalAmount, setPayment , data }) =>{
             e.preventDefault();
             try{
                 console.log(data)
-                const response = await axios.post('http://localhost:5000/api/policy/user',{
+                const response = await axios.post(`${process.env.REACT_APP_API_URL}/policy/user`,{
                     email:userData.email,
                     policyId:data._id,
                     coverAmount: totalAmount,
