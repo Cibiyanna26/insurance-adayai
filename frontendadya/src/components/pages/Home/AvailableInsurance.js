@@ -84,7 +84,7 @@ const AvailableInsurance = () =>{
                 <div className="w-full my-[80px]" id="insuranceproducts z-10" >
                     <div className="w-[70%] mx-auto flex flex-col gap-[25px]">
                         <div className="flex flex-col gap-[12px] text-center">
-                            <h1 className="text-3xl font-semibold">Every Insurance you need in the 21st Century</h1>
+                            <h1 className="text-3xl font-semibold">Every Insurance you need in the <span className="text-green-500">21st</span> Century</h1>
                             <p className="text-xl font-normal text-gray-700">
                                 We do care, that's why we are everywhere you <br/>
                                 need to be with whatever you need.

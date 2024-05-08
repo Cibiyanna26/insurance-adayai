@@ -1,7 +1,10 @@
 import { useSelector } from "react-redux";
 import {useState,useEffect} from 'react'
 import axios from 'axios'
-
+import { ring } from 'ldrs'
+import { Toaster } from "react-hot-toast";
+import { notifyError , notifySuccess } from "../../../utils/user.service";
+import CancelIcon from '@mui/icons-material/Cancel';
 
 const PaymentCard = ({totalAmount, setPayment , data }) =>{
     const [date,setDate] = useState('');
@@ -9,9 +12,13 @@ const PaymentCard = ({totalAmount, setPayment , data }) =>{
     const [expDate , setExpDate] = useState('');
     const [cvv, setCvv] = useState('');
     const { userData } = useSelector((store) => store.userData)
+    const [loader,setLoader] = useState(0)
+    ring.register()
+
 
     const handlePayment =  async (e) =>{
             e.preventDefault();
+            setLoader(1)
             try{
                 console.log(data)
                 const response = await axios.post(`${process.env.REACT_APP_API_URL}/policy/user`,{
@@ -20,19 +27,23 @@ const PaymentCard = ({totalAmount, setPayment , data }) =>{
                     coverAmount: totalAmount,
                     policyName:data.policyName,
                 })
-                console.log(response)
+                setLoader(0)
+                notifySuccess(response.data.message)
             }catch(err){
-                console.log(err)
+                setLoader(1)
+                notifyError(err.response.data.message)
             }
     }
 
     return(
         <>
             <div className="fixed top-0 left-0 w-full h-full  ease-in-out duration-500 bg-[#000000] bg-opacity-50 flex flex-col items-center justify-center">
-                <div className="w-[25rem] rounded-xl h-full  p-4 relative">
+                <Toaster/>
+
+                <div className="w-[30rem] rounded-xl h-full  p-4 relative">
                     
                     <div className=" w-full bg-white rounded-xl shadow-xl top-11 p-4">
-                        <button onClick={() => setPayment(0)} className="block">X</button>
+                        <button onClick={() => setPayment(0)} className="w-full text-right p-[4px] text-red-500 hover:opacity-90" ><CancelIcon/></button>
                         <div className="flex flex-row justify-between items-center p-2">
                             <h1 className="font-semibold text-lg text-blue-900">Confirm Payment</h1>
                             <div>
@@ -71,7 +82,20 @@ const PaymentCard = ({totalAmount, setPayment , data }) =>{
                                     <input value={cvv} type="text" onChange={(e)=>setCvv(e.target.value)} className="w-full  text-zinc-600  outline-none text-lg " placeholder="Enter cvv" required ></input>
                                 </div>
                                 <div className="col-span-2">
-                                    <button className="w-full bg-orange-500 hover:bg-orange-400 text-white text-center p-4  rounded-xl">Pay</button>
+                                    {
+                                        loader === 0 ? 
+                                            <button className="w-full bg-green-500 hover:opacity-90 duration-200 ease-in text-white text-center p-4  rounded-xl">Pay</button>
+                                            :
+                                            <button className="w-full bg-green-500 hover:opacity-90 duration-200 ease-in text-white text-center p-4  rounded-xl">
+                                                <l-ring
+                                                    size="23"
+                                                    stroke="2"
+                                                    bg-opacity="0"
+                                                    speed="2"
+                                                    color="white"
+                                                ></l-ring>
+                                            </button>
+                                    }
                                 </div>
                             </form>
                         </div>

@@ -13,6 +13,7 @@ import { Provider } from 'react-redux';
 import store from './redux/store';
 import Purchase from './components/pages/Purchase/Purchase';
 import UserPurchased from './components/pages/User_Purchased/User_Purchased';
+import SuccessPurchase from './components/pages/PolicyDetails/SuccessPurchase';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
@@ -50,7 +51,10 @@ const appRouter = createBrowserRouter([
         path:'/user-insurance',
         element:<UserPurchased/>
       },
-  
+      {
+        path:'/user-purchase/success',
+        element:<SuccessPurchase/>
+      }
     ],
   }
 ])

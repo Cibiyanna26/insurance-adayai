@@ -1,6 +1,7 @@
 import { getCookie } from "./cookie.service";
-
+import toast from 'react-hot-toast';
 import axios from 'axios'
+
 async function checkAuthorization() {
     const token = getCookie('token');
     try {
@@ -22,4 +23,44 @@ async function checkAuthorization() {
     }
 }
 
-export { checkAuthorization };
+
+
+
+const notifyMessage = (message) => {
+    toast(message, {
+        duration: 2000,
+        position: 'top-right',
+        style: {
+            minWidth: '250px',
+            minHeight: '50px',
+            padding: '10px',
+        }
+    });
+
+}
+
+const notifySuccess = (message) => {
+    toast.success(message, {
+        duration: 2000,
+        position: 'top-right',
+        style: {
+            minWidth: '250px',
+            minHeight: '50px',
+            padding: '10px',
+        }
+    });
+}
+
+const notifyError = (message) => {
+    toast.error(message, {
+        duration: 2000,
+        position: 'top-right',
+        style: {
+            maxWidth: '450px',
+            maxHeight: '200px',
+        }
+    });
+}
+
+
+export { checkAuthorization , notifySuccess, notifyError, notifyMessage };
