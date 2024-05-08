@@ -12,4 +12,5 @@ const { fetchPolicyData,
 
 router.route('/').get(fetchPolicyData).post(policyInfo,createPolicy)
 router.route('/user').get(auth, getCustomerPolicy).post(AppliedpolicyInfo,createCustomerPolicy)
+
 module.exports =  router;

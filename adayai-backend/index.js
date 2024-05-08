@@ -13,7 +13,7 @@ app.use(express.urlencoded({ extended: false }))
 
 const corsOptions = {
     origin: ['https://insurance-frontend-adayai.vercel.app', 'http://localhost:3000'],
-    credentials: true,            //access-control-allow-credentials:true
+    credentials: true, 
     optionSuccessStatus: 200,
 }
 

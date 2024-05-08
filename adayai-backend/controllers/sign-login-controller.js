@@ -1,6 +1,8 @@
 const {hashPassword , genJWT} = require('../utils/helper.service')
 const User = require('../models/userModel')
 const bcrypt = require('bcrypt')
+
+
 const signup = async (req,res) =>{
     try {
         let { username, email, password } = req.body;
