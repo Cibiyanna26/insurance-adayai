@@ -22,7 +22,7 @@ const Card = ({data}) =>{
                         <div className="rounded-[4px] text-center">
                             <p className="text-xl font-semibold">{data.insurance}</p>
                         </div>
-                        <div className="h-[50px] w-full rounded-[4px] p-[4px] flex items-center bg-green-400 justify-center text-white">
+                        <div className="h-[50px] w-full rounded-[4px] p-[4px] flex items-center bg-green-500 justify-center text-white">
                             Explore
                         </div>
                     </div>
