@@ -11,7 +11,6 @@ import Policy from './components/pages/Policy/Policy';
 import PolicyDetails from './components/pages/PolicyDetails/PolicyDetails';
 import { Provider } from 'react-redux';
 import store from './redux/store';
-import Purchased from './components/pages/Purchased_Policy/Purchased';
 import Purchase from './components/pages/Purchase/Purchase';
 import UserPurchased from './components/pages/User_Purchased/User_Purchased';
 
