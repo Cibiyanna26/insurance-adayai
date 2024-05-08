@@ -35,10 +35,10 @@ const PolicyDetails = () => {
                                 </div>
                                 <div>
                                     <h1 className='text-2xl font-semibold'>{policyData?.policyName}</h1>
-                                    <p className='text-green-400'>386 Cashless hospitals (+Cashless anywhere support)</p>
+                                    <p className='text-green-500'>386 Cashless hospitals (+Cashless anywhere support)</p>
                                 </div>
                             </div>
-                            <div className='bg-cyan-200 text-cyan-700 text-center'>
+                            <div className='bg-cyan-200 text-cyan-700 text-center p-[4px]'>
                                 <h1>SKC is a 5 Star Partner for Care Health</h1>
                             </div>
                         </div>
@@ -56,9 +56,9 @@ const PolicyDetails = () => {
                             </select>
                         </div>
 
-                        <div className='h-[100px] rounded-xl bg-white p-[16px] shadow-md'>
+                        <div className='h-[100px] rounded-xl bg-white p-[16px] shadow-md leading-8'>
                             <h1 className='text-xl font-semibold'>Member Covered</h1>
-                            <text className='font-medium text-gray-600'>{userData.username}</text>
+                            <p className='font-medium text-gray-600'>{userData.username}</p>
                         </div>
                     </div>
                     <div className='w-[30%] h-[250px] mx-auto rounded-xl shadow-md p-[16px] flex flex-col gap-[16px] bg-white'>

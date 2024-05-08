@@ -28,10 +28,10 @@ const UserPurchased = () => {
     }
 
     return (
-        <div className='bg-gray-100 py-[20px] flex flex-col gap-[16px]'>
+        <div className='bg-gray-100 py-[20px] flex flex-col gap-[16px] h-[80vh]'>
             <h1 className='text-3xl font-bold text-green-500 text-center'>Claimed Policies</h1>
             <p className='text-xl font-normal text-gray-700 text-center'>Plans made for future safety</p>
-            <div className='p-[20px] w-[60%] mx-auto flex flex-col gap-[12px]'>
+            <div className='p-[20px] w-[60%] mx-auto flex flex-col gap-[12px] h-[60vh] overflow-y-auto'>
                 {
                     purchased.length > 0 ? purchased.map((data,index)=>{
                         return(

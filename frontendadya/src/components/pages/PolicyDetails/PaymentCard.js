@@ -5,6 +5,7 @@ import { ring } from 'ldrs'
 import { Toaster } from "react-hot-toast";
 import { notifyError , notifySuccess } from "../../../utils/user.service";
 import CancelIcon from '@mui/icons-material/Cancel';
+import { useNavigate } from "react-router-dom";
 
 const PaymentCard = ({totalAmount, setPayment , data }) =>{
     const [date,setDate] = useState('');
@@ -14,7 +15,7 @@ const PaymentCard = ({totalAmount, setPayment , data }) =>{
     const { userData } = useSelector((store) => store.userData)
     const [loader,setLoader] = useState(0)
     ring.register()
-
+    const navigate = useNavigate();
 
     const handlePayment =  async (e) =>{
             e.preventDefault();
@@ -28,9 +29,9 @@ const PaymentCard = ({totalAmount, setPayment , data }) =>{
                     policyName:data.policyName,
                 })
                 setLoader(0)
-                notifySuccess(response.data.message)
+                navigate('/user-purchase/success')
             }catch(err){
-                setLoader(1)
+                setLoader(0)
                 notifyError(err.response.data.message)
             }
     }
