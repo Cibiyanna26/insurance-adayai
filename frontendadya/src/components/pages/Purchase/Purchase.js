@@ -17,7 +17,6 @@ const Purchase = () =>{
     return(
         <>
             <section className="">
-                {/* <ToastContainer /> */}
                 <div className="w-[80%] mx-auto p-4">
                     <h1 className="text-2xl font-bold text-center">Claim Insurance</h1>
                 </div>
@@ -76,15 +75,6 @@ const Purchase = () =>{
                             <label className="bg-[#FC8A06] rounded-xl px-3 py-2 text-white"> items</label>
                         </div>
                         <div className="h-[19rem] flex flex-col gap-4 overflow-y-auto no-scrollbar w-[40rem]">
-                            {/* {
-                                cartItems && cartItems.map((cart) => {
-                                    return (
-                                        <>
-                                            <CartCard cart={cart} />
-                                        </>
-                                    )
-                                })
-                            } */}
                         </div>
                         <div className="total-amount h-[5rem] rounded-xl bg-[#fc8906d4] text-white cursor-pointer">
                             <button className="w-[80%] mx-auto h-full flex justify-center items-center cursor-default">

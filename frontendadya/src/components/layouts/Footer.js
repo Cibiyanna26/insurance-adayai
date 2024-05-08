@@ -2,8 +2,6 @@ import React from 'react';
 import InstagramIcon from '../../icons/instagramIcon';
 import FacebookIcon from '../../icons/facebookIcon';
 import TwitterIcon from '../../icons/twitterIcon';
-import YoutubeIcon from '../../icons/youtubeIcon';
-import MediumIcon from '../../icons/mediumIcon';
 import { Link } from 'react-router-dom';
 
 const Footer = () => {

@@ -41,7 +41,7 @@ const SignIn = () => {
                         <input onChange={(e)=>setEmail(e.target.value)} autoComplete="off" type="email" className="bg-gray-100 text-gray-900 border-0 rounded-md p-2 mb-4 focus:bg-gray-200 focus:outline-none focus:ring-1 focus:ring-blue-500 transition ease-in-out duration-150" placeholder="Email address" />
                         <input onChange={(e)=>setPassword(e.target.value)} autoComplete="off" type="password" className="bg-gray-100 text-gray-900 border-0 rounded-md p-2 mb-4 focus:bg-gray-200 focus:outline-none focus:ring-1 focus:ring-blue-500 transition ease-in-out duration-150" placeholder="Password" />
                         <div className="flex items-center justify-between flex-wrap">
-                            <p className="text-gray-900 mt-4"> Don't have an account? <Link to={'/signup'} className="text-sm text-blue-500 -200 hover:underline mt-4">Signup</Link></p>
+                            <p className="text-gray-900 mt-4"> Don't have an account? <Link to={'/signup'} className="text-md text-blue-500 -200 hover:underline mt-4">Signup</Link></p>
                         </div>
 
                         {

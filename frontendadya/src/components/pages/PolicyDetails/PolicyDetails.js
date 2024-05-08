@@ -5,7 +5,7 @@ import PaymentCard from './PaymentCard';
 
 const PolicyDetails = () => {
 
-    const { insuranceType , policyId } = useParams();
+    const {  policyId } = useParams();
     const {policies} = useSelector(store => store.policy);
     const {userData} = useSelector(store=>store.userData)
     const [policyData, setPolicyData] = useState({});

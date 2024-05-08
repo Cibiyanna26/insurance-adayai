@@ -4,7 +4,6 @@ import Avatar from '@mui/material/Avatar';
 import { deleteCookie } from "../../utils/cookie.service";
 const Header = () =>{
     const location = useLocation();
-    console.log(location.pathname); 
     const navigate = useNavigate()
     const {userData} = useSelector(store=>store.userData)
 

@@ -47,7 +47,7 @@ const SignUp = () =>{
 
                         <div className="flex items-center justify-between flex-wrap">
                         
-                            <p className="text-gray-900 mt-4"> Don't have an account? <Link to={'/signin'} className="text-sm text-blue-500 -200 hover:underline mt-4">Signin</Link></p>
+                            <p className="text-gray-900 mt-4"> Don't have an account? <Link to={'/signin'} className="text-md text-blue-500 -200 hover:underline mt-4">Signin</Link></p>
                         </div>
                         {
                             loader == 0 ?
